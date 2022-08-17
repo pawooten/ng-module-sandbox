@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { GreetingService } from './greeting-service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-module-sandbox';
+
+  constructor(private greetingService: GreetingService) {
+    greetingService.logGreeting('Hi, how goes it?');
+  }
+
 }
